@@ -1,5 +1,7 @@
 # wlai-uf-hackathon-2023
 
+For CO-OPS employees and collaborators participating in the University of Florida Hackathon 2023 working on the water level AI project.
+
 # Overview
 
 For additional information, contact:
