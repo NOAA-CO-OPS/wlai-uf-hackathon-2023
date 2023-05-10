@@ -2,7 +2,58 @@
 
 For CO-OPS employees and collaborators participating in the University of Florida Hackathon 2023 working on the water level AI project.
 
-# Overview
+## Tutorial
+
+### Download data
+
+1) Install `gdown` to download from Google Drive
+
+    pip install gdown
+
+
+2) Download all 5 data archives 
+
+    # This does not work because of the share link permissions! 
+    sh download_data.sh
+
+
+3) Extract data from archives
+
+
+
+
+
+### Setup Python environment 
+
+1) [Install Anaconda using their documentation](https://docs.anaconda.com/free/anaconda/install/linux/)
+
+
+2) Create Anaconda environment from requirements file
+
+    conda env create --file environment.yml
+
+
+3) Activate Anaconda environment
+
+    conda activate wlai
+
+
+4) Deactive Anaconda environment (when you are finished working)
+
+    conda deactivate
+
+
+### Run model on PC workstation
+
+
+### Run model on Slurm-based HPC
+
+
+
+
+
+
+## Overview
 
 For additional information, contact:
 Lindsay Abrams,
