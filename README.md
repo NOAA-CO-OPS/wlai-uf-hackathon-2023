@@ -17,11 +17,13 @@ For additional information, contact:
 ### Download data
 
 1) Install `gdown` to download from Google Drive
+<!-- end of the list -->
 
     pip install gdown
 
 
 2) Download all 5 data archives 
+<!-- end of the list -->
 
     # This does not work because of the share link permissions! 
     sh download_data.sh
