@@ -39,6 +39,18 @@ For CO-OPS employees and collaborators participating in the University of Florid
 
 ### Run model on PC workstation
 
+1) Run simple example (single station with minimal options)
+
+- `qc_model_nn.py` contains neural network architecture and related utilities.
+- It also has a `main` function that demonstrates how to use the functions to train a model.
+<!-- end of the list -->
+
+    python qc_model_nn.py \ 
+        --station 9751639 \
+        --directory data/ \
+        --epochs 5        \
+        --batch_size 256
+
 
 ### Run model on Slurm-based HPC
 
