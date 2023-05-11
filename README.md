@@ -1,6 +1,16 @@
 # wlai-uf-hackathon-2023
 
-For CO-OPS employees and collaborators participating in the University of Florida Hackathon 2023 working on the water level AI project.
+## Overview
+
+Machine learning code for quality control of water level data from measurement stations.
+
+## Contact
+
+For additional information, contact:
+
+- Lindsay Abrams,
+- NOAA Center for Operational Oceanographic Products and Services,
+- lindsay.abrams@noaa.gov
 
 ## Tutorial
 
@@ -58,27 +68,9 @@ For CO-OPS employees and collaborators participating in the University of Florid
 ### Run model on Slurm-based HPC
 
 
-
-
-
-
-## Overview
-
-For additional information, contact:
-Lindsay Abrams,
-NOAA Center for Operational Oceanographic Products and Services,
-lindsay.abrams@noaa.gov
-
 ## NOAA Open Source Disclaimer
 
 This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an 'as is' basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
-
-## Documentation and Code
-Environment yml file is included for creating 'wlai' virtual environment with all dependencies.
-
-Initial code was created by Greg Dusek. 
-
-ModelNN_QC is the initial prototype--a simple (7-feature) neural network model for QC of water level data.
 
 ## License
 
