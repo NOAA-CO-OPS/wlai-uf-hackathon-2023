@@ -17,12 +17,6 @@ For CO-OPS employees and collaborators participating in the University of Florid
     sh download_data.sh
 
 
-3) Extract data from archives
-
-
-
-
-
 ### Setup Python environment 
 
 1) [Install Anaconda using their documentation](https://docs.anaconda.com/free/anaconda/install/linux/)
