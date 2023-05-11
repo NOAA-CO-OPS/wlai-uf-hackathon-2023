@@ -11,6 +11,7 @@ dependencies:
 - git
 - dill
 - pip
+- imblearn
 - pip:
     - tensorflow
     - keras
