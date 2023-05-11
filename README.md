@@ -23,16 +23,19 @@ For CO-OPS employees and collaborators participating in the University of Florid
 
 
 2) Create Anaconda environment from requirements file
+<!-- end of the list -->
 
     conda env create --file environment.yml
 
 
 3) Activate Anaconda environment
+<!-- end of the list -->
 
     conda activate wlai
 
 
 4) Deactive Anaconda environment (when you are finished working)
+<!-- end of the list -->
 
     conda deactivate
 
