@@ -96,7 +96,7 @@ if __name__ == "__main__":
                     help="Water level station ID")
   parser.add_option("-d", "--directory", 
                     default="data/",
-                    help="Path to station data")
+                    help="Path to station data directory")
   parser.add_option("-e", "--epochs",
                     default=5,
                     type="int",
