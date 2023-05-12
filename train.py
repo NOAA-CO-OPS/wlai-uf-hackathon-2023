@@ -7,6 +7,7 @@ import qc_model_nn as qcmodel
 from optparse import OptionParser
 from imblearn.under_sampling import RandomUnderSampler 
 from sklearn.utils import shuffle
+from keras.callbacks import ModelCheckpoint
 
 def main():
 
@@ -21,6 +22,10 @@ def main():
   parser.add_option("-d", "--directory", 
                     default="data/",
                     help="Path to station data directory")
+  parser.add_option("-m", "--model_out", 
+                    help="Path to save trained model")
+  parser.add_option("-l", "--log_history_out",
+                    help="Path to save training history")
   parser.add_option("-e", "--epochs",
                     default=30,
                     type="int",
@@ -50,7 +55,15 @@ def main():
   # Data directory
   data_dir = options.directory
   if not os.path.exists(data_dir):
-    print("Could not find directory {}.\nExiting...".format(data_dir))
+    print("[-] Could not find directory {}.\nExiting...".format(data_dir))
+    exit(-1)
+  # Path to save trained model (and checkpoints)
+  model_outfile = options.model_out
+  if model_outfile is None:
+    print("[-] Must provide a path to save model (-m).\nExiting...")
+    exit(-1)
+  # Path to save training history
+  history_outfile = options.log_history_out
   # List of station IDs to include in training
   station_ids = options.stations.split(",")
   # Which columns to include as training features
@@ -113,13 +126,33 @@ def main():
   # Train model #
   ###############
 
+  # Setup checkpoint
+  checkpoint = ModelCheckpoint(model_outfile,
+                               monitor="val_loss",
+                               verbose=0,
+                               save_best_only=True,
+                               mode="min")
+  callbacks = [checkpoint]
+  
+  # Initialize
+  numFeatures = len(featureNames)
+  model = qcmodel.build(numFeatures)
 
+  # Train 
+  history = qcmodel.train(model,
+                  features_train,
+                  target_train,
+                  features_valid,
+                  target_valid,
+                  epochs=epochs,
+                  batch_size=batch_size,
+                  callbacks=callbacks)
 
-  ##############
-  # Save model #
-  ##############
+  if history_outfile is not None:
+    history = pd.DataFrame(history.history)
+    with open(history_outfile, mode='w') as f:
+      history.to_csv(f, index=False)
 
 
 if __name__ == "__main__":
   main()
-

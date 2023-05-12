@@ -54,7 +54,7 @@ For additional information, contact:
 
 ### Run model on PC workstation
 
-1) Run simple example (single station with minimal options)
+**Run simple example (single station with minimal options)**
 
 - `qc_model_nn.py` contains neural network architecture and related utilities.
 - It also has a `main` function that demonstrates how to use the functions to train a model.
@@ -66,6 +66,22 @@ For additional information, contact:
         --epochs 5        \
         --batch_size 256
 
+**Run training script on a combination of sites**
+<!-- end of the list -->
+
+First, train the model and save it
+
+    python train.py \
+        --stations 9751639,8726607     \    # Train on 2 stations combined
+        --directory data/              \    # Directory with input data
+        --model out/test.hdf5          \    # Path to save trained model
+        --log_history_out out/test.csv \    # Path to save training log
+        --epochs 20                    \    # Number of training epochs
+        --batch_size 256                    # Batch size
+
+Second, evaluate the trained model
+
+    python evaluate.py 
 
 ### Run model on Slurm-based HPC
 
