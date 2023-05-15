@@ -72,16 +72,47 @@ For additional information, contact:
 First, train the model and save it
 
     python train.py \
-        --stations 9751639,8726607     \    # Train on 2 stations combined
-        --directory data/              \    # Directory with input data
-        --model out/test.hdf5          \    # Path to save trained model
-        --log_history_out out/test.csv \    # Path to save training log
-        --epochs 20                    \    # Number of training epochs
-        --batch_size 256                    # Batch size
+        --stations 9751639,8726607         \    # Train on 2 stations combined
+        --directory data/                  \    # Directory with input data
+        --model out/test-model.hdf5        \    # Path to save trained model
+        --log_history_out out/test-log.csv \    # Path to save training log
+        --epochs 20                        \    # Number of training epochs
+        --batch_size 256                        # Batch size
 
 Second, evaluate the trained model
 
-    python evaluate.py 
+    python eval.py \
+        --stations 9751639,8726607      \   # Evaluate model with 2 stations combined
+        --directory data/               \   # Directory with input data
+        --model out/test-model.hdf5     \   # Path to already trained model
+        --log_history out/test-log.csv  \   # Path to train model's training log (optional)
+        --output_prefix out/test            # File prefix for all the output tables and figures
+
+Here are example outputs (for stations 9751639, 8726607):
+
+**Metrics table**
+
+    head out/test-metrics.csv
+    stations,dataset,num_points,hits,misses,false_alarms,correct_rejects,num_good_targets,prop_good_targets,num_bad_targets,prop_good_targets,accuracy,accuracy_bad_points,area_under_roc,prop_bad_targets
+    "9751639,8726607",train,274804,377,0,2267,272160,272160,0.9903785971092124,2644,0.9903785971092124,0.9917504839813103,0.9917504839813103,0.993912049683109,0.009621402890787617
+    "9751639,8726607",validate,274804,377,0,2267,272160,272160,0.9903785971092124,2644,0.9903785971092124,0.9917504839813103,0.9917504839813103,0.993912049683109,0.009621402890787617
+
+**Outputs table**
+
+    head -n 5 out/test-output-validate.csv
+    0.99925315,1,good,1,good
+    0.99920803,1,good,1,good
+    0.9991847,1,good,1,good
+    0.99920905,1,good,1,good
+
+**Training curve plot**
+
+![Training curve](out/test-training_curve.png)
+
+**Confusion matrix**
+
+![Confusion matrix](out/test-confusionmatrix-validate.png)
+
 
 ### Run model on Slurm-based HPC
 
