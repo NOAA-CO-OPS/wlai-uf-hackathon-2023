@@ -113,6 +113,38 @@ Here are example outputs (for stations 9751639, 8726607):
 
 ![Confusion matrix](out/test-confusionmatrix-validate.png)
 
+### Execute many parallel training runs
+
+**Define site combinations**
+
+Create a file where each line is the comma-delimited sites to train on
+
+    head -n 5 runs/sites.txt
+    1612340
+    1617433
+    8418150
+    8443970
+    8447386
+
+
+**Generate runs for each site**
+
+Use `runs/create_runs.sh` to create a job for each of the sites specified above
+
+    sh runs/create_runs.sh > runs/runs.txt
+
+
+**Execute all those runs in parallel**
+
+You may need to install GNU parallel (`apt install parallel`)
+
+    parallel < runs/runs.txt
+
+
+**You can monitor the progress with `top`**
+
+    top
+
 
 ### Run model on Slurm-based HPC
 
