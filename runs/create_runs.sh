@@ -8,7 +8,7 @@ while read site; do
   echo python train.py \
        -s $site \
        -m $OUTDIR/model_${site}.hdf5 \
-       -l $OUTDIR/test-log.csv \
+       -l $OUTDIR/trainlog_${site}.csv \
        -e $EPOCHS
 done < $SITES_FILE
 
