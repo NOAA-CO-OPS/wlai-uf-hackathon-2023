@@ -1,24 +1,125 @@
 # wlai-uf-hackathon-2023
 
-For CO-OPS employees and collaborators participating in the University of Florida Hackathon 2023 working on the water level AI project.
+## Overview
 
-# Overview
+Machine learning code for quality control of water level data from measurement stations.
+
+## Contact
 
 For additional information, contact:
-Lindsay Abrams,
-NOAA Center for Operational Oceanographic Products and Services,
-lindsay.abrams@noaa.gov
+
+- Lindsay Abrams,
+- NOAA Center for Operational Oceanographic Products and Services,
+- lindsay.abrams@noaa.gov
+
+## Tutorial
+
+### Download data
+
+1) Install `gdown` to download from Google Drive
+<!-- end of the list -->
+
+    pip install gdown
+
+
+2) Download all 5 data archives 
+<!-- end of the list -->
+
+    # This does not work because of the share link permissions! 
+    sh download_data.sh
+
+
+### Setup Python environment 
+
+1) [Install Anaconda using their documentation](https://docs.anaconda.com/free/anaconda/install/linux/)
+
+
+2) Create Anaconda environment from requirements file
+<!-- end of the list -->
+
+    conda env create --file environment.yml
+
+
+3) Activate Anaconda environment
+<!-- end of the list -->
+
+    conda activate wlai
+
+
+4) Deactive Anaconda environment (when you are finished working)
+<!-- end of the list -->
+
+    conda deactivate
+
+
+### Run model on PC workstation
+
+**Run simple example (single station with minimal options)**
+
+- `qc_model_nn.py` contains neural network architecture and related utilities.
+- It also has a `main` function that demonstrates how to use the functions to train a model.
+<!-- end of the list -->
+
+    python qc_model_nn.py \ 
+        --station 9751639 \
+        --directory data/ \
+        --epochs 5        \
+        --batch_size 256
+
+**Run training script on a combination of sites**
+<!-- end of the list -->
+
+First, train the model and save it
+
+    python train.py \
+        --stations 9751639,8726607         \    # Train on 2 stations combined
+        --directory data/                  \    # Directory with input data
+        --model out/test-model.hdf5        \    # Path to save trained model
+        --log_history_out out/test-log.csv \    # Path to save training log
+        --epochs 20                        \    # Number of training epochs
+        --batch_size 256                        # Batch size
+
+Second, evaluate the trained model
+
+    python eval.py \
+        --stations 9751639,8726607      \   # Evaluate model with 2 stations combined
+        --directory data/               \   # Directory with input data
+        --model out/test-model.hdf5     \   # Path to already trained model
+        --log_history out/test-log.csv  \   # Path to train model's training log (optional)
+        --output_prefix out/test            # File prefix for all the output tables and figures
+
+Here are example outputs (for stations 9751639, 8726607):
+
+**Metrics table**
+
+    head out/test-metrics.csv
+    stations,dataset,num_points,hits,misses,false_alarms,correct_rejects,num_good_targets,prop_good_targets,num_bad_targets,prop_good_targets,accuracy,accuracy_bad_points,area_under_roc,prop_bad_targets
+    "9751639,8726607",train,274804,377,0,2267,272160,272160,0.9903785971092124,2644,0.9903785971092124,0.9917504839813103,0.9917504839813103,0.993912049683109,0.009621402890787617
+    "9751639,8726607",validate,274804,377,0,2267,272160,272160,0.9903785971092124,2644,0.9903785971092124,0.9917504839813103,0.9917504839813103,0.993912049683109,0.009621402890787617
+
+**Outputs table**
+
+    head -n 5 out/test-output-validate.csv
+    0.99925315,1,good,1,good
+    0.99920803,1,good,1,good
+    0.9991847,1,good,1,good
+    0.99920905,1,good,1,good
+
+**Training curve plot**
+
+![Training curve](out/test-training_curve.png)
+
+**Confusion matrix**
+
+![Confusion matrix](out/test-confusionmatrix-validate.png)
+
+
+### Run model on Slurm-based HPC
+
 
 ## NOAA Open Source Disclaimer
 
 This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an 'as is' basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
-
-## Documentation and Code
-Environment yml file is included for creating 'wlai' virtual environment with all dependencies.
-
-Initial code was created by Greg Dusek. 
-
-ModelNN_QC is the initial prototype--a simple (7-feature) neural network model for QC of water level data.
 
 ## License
 
