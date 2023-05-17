@@ -96,6 +96,7 @@ def main():
                     default="9751639,8726607",
                     help="List of station IDs (comma-delimited)")
   parser.add_option("-d", "--directory",
+                    default="data/"
                     help="Path to station data directory")
   parser.add_option(     "--features",
                     default="PRIMARY,PRIMARY_SIGMA,PRIMARY_SIGMA_TRUE,BACKUP,BACKUP_TRUE,PREDICTION",
@@ -223,10 +224,6 @@ def main():
   plotConfusionMatrix(valid_confusionMatrix, classes=classNames,
                       normalize=True, title='Confusion matrix, with normalization')
   fig.savefig(confusion_matrix_outfile_valid)
-
-
-
-
 
 
 if __name__ == "__main__":
