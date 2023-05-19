@@ -115,30 +115,19 @@ Here are example outputs (for stations 9751639, 8726607):
 
 ### Execute many parallel training runs
 
-**Define site combinations**
+**Generate a list of training run commands to execute**
 
-Create a file where each line is the comma-delimited sites to train on
+    # Train on individual stations (with random undersampling using 10% minority case)
+    python create_runs.py -r 0.1 > runs/stations.sh
 
-    head -n 5 runs/sites.txt
-    1612340
-    1617433
-    8418150
-    8443970
-    8447386
-
-
-**Generate runs for each site**
-
-Use `runs/create_runs.sh` to create a job for each of the sites specified above
-
-    sh runs/create_runs.sh > runs/runs.txt
-
+    # Train on groups of stations organized by region (-c is for a column name)
+    python create_runs.py -c region -r 0.1 > runs/regions.sh 
 
 **Execute all those runs in parallel**
 
 You may need to install GNU parallel (`apt install parallel`)
 
-    parallel < runs/runs.txt
+    parallel < runs/stations.sh
 
 
 **You can monitor the progress with `top`**
