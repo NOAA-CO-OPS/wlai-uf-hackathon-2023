@@ -5,7 +5,7 @@ import pandas as pd
 from optparse import OptionParser
 import itertools
 
-def create_command(station_ids, name, data_dir, output_dir, hyperparams):
+def create_command(station_ids, name, data_dir, output_dir, hyperparams, trial=1):
   # Returns a string containing a python command to train the model
   # Options:
   #   station_ids: list of station IDs
@@ -16,8 +16,8 @@ def create_command(station_ids, name, data_dir, output_dir, hyperparams):
 
   cmd_str = "python train.py " + \
             " -s " + str(station_ids) + \
-            " -m " + "model_" + str(name) + ".hdf5" + \
-            " -l " + "trainlog_" + str(name) + ".csv" + \
+            " -m " + "model_" + str(name) + "_trial-" + str(trial) + ".hdf5" + \
+            " -l " + "trainlog_" + str(name)  + "_trial-" + str(trial) + ".csv" + \
             "  " + hyperparams
   return cmd_str
 
@@ -36,17 +36,22 @@ parser.add_option("-o", "--output_dir",
                   default="out/",
                   help="Path to output directory.")
 parser.add_option("-e", "--epochs",
-                  help="Number of training epochs")
+                  help="Number of training epochs.")
 parser.add_option("-b", "--batch_size",
                   help="Batch size")
 parser.add_option("-r", "--resample_minority_percent",
-                  help="Resample data so that N% of the data is the minority class. If `None`, don't resample")
+                  help="Resample data so that N% of the data is the minority class. If `None`, don't resample.")
+parser.add_option("-t", "--trials",
+                  default=1,
+                  type="int",
+                  help="Number of trials for each set of hyperparameters.")
 (options, args) = parser.parse_args()
 
 stations_file = options.stations_file
 group_columns = options.columns.split(",")
 output_dir = options.output_dir
 data_dir = options.data_dir
+num_trials = options.trials
 
 # Create a dictionary of hyperparamers
 # Only add hyperparams that are provided (otherwise, will use default values in `train.py`)
@@ -77,9 +82,11 @@ for group_column in group_columns:
     station_ids_str = ",".join(station_ids)
     # Sweep over hyperparameters for all stations
     for hyperparam_combo in hyperparam_combos:
-      cmd_str = create_command(station_ids_str, "all-stations", data_dir, output_dir, hyperparam_combo)
-      # Print the training Python command
-      print(cmd_str)
+      # Repeat for each trial
+      for i in range(1, num_trials+1):
+        cmd_str = create_command(station_ids_str, "all-stations", data_dir, output_dir, hyperparam_combo, trial=i)
+        # Print the training Python command
+        print(cmd_str)
     # Continue to next column name
     continue
 
@@ -99,6 +106,8 @@ for group_column in group_columns:
     group_station_ids_str = ",".join(group_station_ids)
     # Sweep over hyperparameters for stations in this group
     for hyperparam_combo in hyperparam_combos:
-      cmd_str = create_command(group_station_ids_str, group, data_dir, output_dir, hyperparam_combo)
-      # Print the training Python command
-      print(cmd_str)
+      # Repeat for each trial
+      for i in range(1, num_trials+1):
+        cmd_str = create_command(group_station_ids_str, group, data_dir, output_dir, hyperparam_combo, trial=i)
+        # Print the training Python command
+        print(cmd_str)
