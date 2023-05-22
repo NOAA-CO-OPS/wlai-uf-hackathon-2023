@@ -20,7 +20,7 @@ parser.add_option("-s", "--stations_file",
                   help="Path to stations table.")
 parser.add_option("-c", "--columns",
                   default="station_id",
-                  help="List of column names for grouping stations (comma-delimited).")
+                  help="List of column names for grouping stations (comma-delimited). Or, 'ALL' to combine all stations.")
 parser.add_option("-d", "--data_dir",
                   default="data/",
                   help="Path to station data directory.")
@@ -57,8 +57,27 @@ hyperparam_combos = [" ".join(hpc) for hpc in hyperparam_combos]
 
 for group_column in group_columns:
 
-  groups = dfStations[group_column]
+  # Special case: column name 'ALL' is not a column. Instead, use all stations.
+  if group_column == "ALL":
+    station_ids = np.unique(dfStations["station_id"].astype("string"))
+    station_ids_str = ",".join(station_ids)
+
+    for hyperparam_combo in hyperparam_combos:
+      cmd_str = create_command(station_ids_str, "all-stations", data_dir, output_dir, hyperparam_combo)
+
+      print(cmd_str)
+
+    continue
+
+  # Normal case: use the column name to group stations IDs by that column value (e.g. into geographic regions)
+  try:
+    groups = dfStations[group_column]
+  except KeyError:
+    print("Could not find column '{}' in stations file '{}'\nExiting...".format(group_column, stations_file))
+    exit(-2)
+
   for group in groups:
+ 
     dfStationsGroup = dfStations[dfStations[group_column] == group]
     group_station_ids = np.unique(dfStationsGroup["station_id"].astype("string"))
     group_station_ids_str = ",".join(group_station_ids)

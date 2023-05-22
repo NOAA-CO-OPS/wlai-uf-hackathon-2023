@@ -123,6 +123,9 @@ Here are example outputs (for stations 9751639, 8726607):
     # Train on groups of stations organized by region (-c is for a column name)
     python create_runs.py -c region -r 0.1 > runs/regions.sh 
 
+    # Train on every station together (use -c, but with 'ALL' which is treated specially)
+    python create_runs.py -c ALL -r 0.1 > runs/all-stations.sh
+
 **Execute all those runs in parallel**
 
 You may need to install GNU parallel (`apt install parallel`)
