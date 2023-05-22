@@ -66,8 +66,8 @@ For additional information, contact:
         --epochs 5        \
         --batch_size 256
 
+
 **Run training script on a combination of sites**
-<!-- end of the list -->
 
 First, train the model and save it
 
@@ -90,12 +90,14 @@ Second, evaluate the trained model
 
 Here are example outputs (for stations 9751639, 8726607):
 
+
 **Metrics table**
 
     head out/test-metrics.csv
     stations,dataset,num_points,hits,misses,false_alarms,correct_rejects,num_good_targets,prop_good_targets,num_bad_targets,prop_good_targets,accuracy,accuracy_bad_points,area_under_roc,prop_bad_targets
     "9751639,8726607",train,274804,377,0,2267,272160,272160,0.9903785971092124,2644,0.9903785971092124,0.9917504839813103,0.9917504839813103,0.993912049683109,0.009621402890787617
     "9751639,8726607",validate,274804,377,0,2267,272160,272160,0.9903785971092124,2644,0.9903785971092124,0.9917504839813103,0.9917504839813103,0.993912049683109,0.009621402890787617
+
 
 **Outputs table**
 
@@ -105,9 +107,11 @@ Here are example outputs (for stations 9751639, 8726607):
     0.9991847,1,good,1,good
     0.99920905,1,good,1,good
 
+
 **Training curve plot**
 
 ![Training curve](out/test-training_curve.png)
+
 
 **Confusion matrix**
 
@@ -125,6 +129,7 @@ Here are example outputs (for stations 9751639, 8726607):
 
     # Train on every station together (use -c, but with 'ALL' which is treated specially)
     python create_runs.py -c ALL -r 0.1 > runs/all-stations.sh
+
 
 **Execute all those runs in parallel**
 

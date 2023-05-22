@@ -44,6 +44,8 @@ def concat_stations(station_ids, data_dir, featureNames,
     data_valid = shuffle(data_valid)
 
   # Select training features
+  if featureNames is None:
+    featureNames = []
   features_train = data_train.loc[:, featureNames]
   features_valid = data_valid.loc[:, featureNames]
 

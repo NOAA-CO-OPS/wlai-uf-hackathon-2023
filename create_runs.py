@@ -16,8 +16,8 @@ def create_command(station_ids, name, data_dir, output_dir, hyperparams, trial=1
 
   cmd_str = "python train.py " + \
             " -s " + str(station_ids) + \
-            " -m " + "model_" + str(name) + "_trial-" + str(trial) + ".hdf5" + \
-            " -l " + "trainlog_" + str(name)  + "_trial-" + str(trial) + ".csv" + \
+            " -m " + output_dir + "/model_" + str(name) + "_trial-" + str(trial) + ".hdf5" + \
+            " -l " + output_dir + "/trainlog_" + str(name)  + "_trial-" + str(trial) + ".csv" + \
             "  " + hyperparams
   return cmd_str
 
