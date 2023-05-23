@@ -11,6 +11,13 @@ import matplotlib.pyplot as plt
 import itertools
 import qc_model_nn as qcmodel
 
+def calc_bss(predictions, observations, climate_mean):
+  bs = np.mean((predictions - observations) ** 2)
+  climate_forecast = np.ones(np.shape(observations)) * climate_mean
+  bsClimate = np.mean((climate_forecast - observations) ** 2)
+  bsOut = 1 - (bs / bsClimate)
+  return bsOut
+
 def plotConfusionMatrix(confusion_matrix, classes,
                         normalize=False,
                         title="Confusion matrix",
@@ -46,7 +53,7 @@ def plotConfusionMatrix(confusion_matrix, classes,
   return
 
 
-def calc_metrics(probs, targets, threshold=0.5):
+def calc_metrics(probs, targets, threshold=0.5, climate_mean=None):
   # Convert to numpy arrays
   probs = np.array(probs)
   targets = np.array(targets)
@@ -82,6 +89,12 @@ def calc_metrics(probs, targets, threshold=0.5):
   # Area under the ROC
   metrics["area_under_roc"] = roc(targets, probs)
 
+  # BSS
+  if climate_mean is not None:
+    metrics["BSS"] = calc_bss(preds, targets, climate_mean)
+  else:
+    metrics["BSS"] = np.nan
+
   return metrics, cnfMatrix
 
 
@@ -96,7 +109,7 @@ def main():
                     default="9751639,8726607",
                     help="List of station IDs (comma-delimited)")
   parser.add_option("-d", "--directory",
-                    default="data/"
+                    default="data/",
                     help="Path to station data directory")
   parser.add_option(     "--features",
                     default="PRIMARY,PRIMARY_SIGMA,PRIMARY_SIGMA_TRUE,BACKUP,BACKUP_TRUE,PREDICTION",
@@ -107,6 +120,9 @@ def main():
                     help="Threshold to binarize predictions to class")
   parser.add_option("-l", "--log_history",
                     help="Path to training curve data")
+  parser.add_option("-c", "--climatology_mean",
+                    type="float",
+                    help="Mean climatology value used to calculate BSS. If None, BSS is skipped..")
   (options, args) = parser.parse_args()
 
   # File prefix
@@ -134,6 +150,8 @@ def main():
   class_threshold = options.threshold
   # Path to training curve history
   training_history_file = options.log_history
+  # Climatology mean
+  climate_mean = options.climatology_mean
 
   # Prepare data
   data_train, features_train, targets_train, \
@@ -161,7 +179,7 @@ def main():
       "predicted_class"        : preds,
       "predicted_class_label"  : ["bad" if x == 0 else "good" for x in preds],
       "target_class"           : targets,
-      "predicted_target_label" : ["bad" if x == 0 else "good" for x in targets],
+      "target_class_label" : ["bad" if x == 0 else "good" for x in targets],
     })
     return df
 
@@ -170,24 +188,24 @@ def main():
 
   # Calculate metrics
   train_metrics, train_confusionMatrix = \
-    calc_metrics(probs_train, targets_train, class_threshold)
+    calc_metrics(probs_train, targets_train, class_threshold, climate_mean=climate_mean)
   valid_metrics, valid_confusionMatrix = \
-    calc_metrics(probs_valid, targets_valid, class_threshold)
+    calc_metrics(probs_valid, targets_valid, class_threshold, climate_mean=climate_mean)
   # Init Metrics table
   dfMetrics = pd.DataFrame(
     columns=["stations", "dataset", "num_points",
              "hits", "misses", "false_alarms", "correct_rejects",
              "num_good_targets", "prop_good_targets",
              "num_bad_targets", "prop_good_targets",
-             "accuracy", "accuracy_bad_points", "area_under_roc"])
+             "accuracy", "accuracy_bad_points", "area_under_roc", "BSS"])
   dfMetrics["stations"] = [options.stations, options.stations]
   dfMetrics["dataset"] = ["train", "validate"]
   # Add metrics to table
-  def populateMetrics(dfMetrics, metrics):
+  def populateMetrics(dfMetrics, metrics, dataset):
     for key in metrics.keys():
-      dfMetrics[key] = metrics[key]
-  populateMetrics(dfMetrics, train_metrics)
-  populateMetrics(dfMetrics, valid_metrics)
+      dfMetrics.loc[dfMetrics["dataset"] == dataset, key] = metrics[key]
+  populateMetrics(dfMetrics, train_metrics, "train")
+  populateMetrics(dfMetrics, valid_metrics, "validate")
 
   # Outputs
 
@@ -218,12 +236,12 @@ def main():
   classNames = ['bad data point','good data point']
   plotConfusionMatrix(train_confusionMatrix, classes=classNames,
                       normalize=True, title='Confusion matrix, with normalization')
-  fig.savefig(confusion_matrix_outfile_train)
+  plt.savefig(confusion_matrix_outfile_train)
   plt.clf()
   confusion_matrix_outfile_valid = outfile_prefix + "-confusionmatrix-validate.pdf"
   plotConfusionMatrix(valid_confusionMatrix, classes=classNames,
                       normalize=True, title='Confusion matrix, with normalization')
-  fig.savefig(confusion_matrix_outfile_valid)
+  plt.savefig(confusion_matrix_outfile_valid)
 
 
 if __name__ == "__main__":
