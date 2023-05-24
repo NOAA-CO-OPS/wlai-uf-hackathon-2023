@@ -43,7 +43,7 @@ For additional information, contact:
 3) Activate Anaconda environment
 <!-- end of the list -->
 
-    conda activate wlai
+    conda activate tf
 
 
 4) Deactive Anaconda environment (when you are finished working)
