@@ -34,16 +34,25 @@ For additional information, contact:
 1) [Install Anaconda using their documentation](https://docs.anaconda.com/free/anaconda/install/linux/)
 
 
-2) Create Anaconda environment from requirements file
+2) Create Anaconda environment
 <!-- end of the list -->
 
-    conda env create --file environment.yml
+    conda create --name=tf python=3.9
+    conda activate tf
+    conda install -c conda-forge cudatoolkit=11.2.2 cudnn=8.1.0
 
+    mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+    echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
 3) Activate Anaconda environment
 <!-- end of the list -->
 
     conda activate tf
+    python3 -m pip install tensorflow==2.10
+    python3 -m pip install pandas matplotlib imbalanced-learn
+
+    # Verify install
+    python3 -c "import os; os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'; import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')))"
 
 
 4) Deactive Anaconda environment (when you are finished working)
