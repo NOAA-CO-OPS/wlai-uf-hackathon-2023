@@ -145,6 +145,12 @@ You may need to install GNU parallel (`apt install parallel`)
 
 ### Run model on Slurm-based HPC
 
+The `run/` directory contains Slurm scripts used for executing the code in an HPC environment that uses the Slurm Workload Manager. You will likely need to adapt these script to be used on a specific HPC environment.
+
+**Run a simple demo (one training task on one GPU)**
+
+    sbatch runs/SLURM_demo.sh
+
 
 ## NOAA Open Source Disclaimer
 
