@@ -93,7 +93,7 @@ for group_column in group_columns:
   # Normal case: use the column name to group stations IDs by that column value (e.g. into geographic regions)
   try:
     # Get all the values within that column (to be treated as station groups)
-    groups = dfStations[group_column]
+    groups = np.unique(dfStations[group_column])
   except KeyError:
     print("Could not find column '{}' in stations file '{}'\nExiting...".format(group_column, stations_file))
     exit(-2)
