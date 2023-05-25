@@ -115,6 +115,9 @@ def main():
     with open(history_outfile, mode='w') as f:
       history.to_csv(f, index=False)
 
+  if doCheckpoint is False:
+    model.save(model_outfile)
+
 
 if __name__ == "__main__":
   main()
