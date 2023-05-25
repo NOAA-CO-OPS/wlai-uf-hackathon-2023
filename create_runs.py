@@ -41,6 +41,10 @@ parser.add_option("-b", "--batch_size",
                   help="Batch size")
 parser.add_option("-r", "--resample_minority_percent",
                   help="Resample data so that N% of the data is the minority class. If `None`, don't resample.")
+parser.add_option(      "--checkpoint",
+                  default="False",
+                  action="store_true",
+                  help="Whether or not to use model checkpoints.")
 parser.add_option("-t", "--trials",
                   default=1,
                   type="int",
@@ -62,6 +66,8 @@ if options.batch_size is not None:
   hyperparams["-b"] = np.array(options.batch_size.split(",")).astype("int")
 if options.resample_minority_percent is not None:
   hyperparams["-r"] = np.array(options.resample_minority_percent.split(",")).astype("float")
+if options.checkpoint is not None:
+  hyperparams["--checkpoint"] = np.array([""])
 
 # Load stations table
 dfStations = pd.read_csv(stations_file)
