@@ -44,6 +44,10 @@ def main():
                     default=None,
                     type="float",
                     help="Resample data so that N% of the data is the minority class. If `None`, don't resample")
+  parser.add_option(      "--checkpoint",
+                    action="store_true",
+                    default=False,
+                    help="Save the model between epochs.")
 
   (options, args) = parser.parse_args()
 
@@ -73,19 +77,24 @@ def main():
   resample_prct = options.resample_minority_percent
   # Shuffle training and validation data
   doShuffle = not options.no_shuffle    
+  # Save model checkpoints
+  doCheckpoint = options.checkpoint
 
   # Prepare Datasets
   data_train, features_train, target_train, \
     data_valid, features_valid, target_valid = \
     qcmodel.concat_stations(station_ids, data_dir, featureNames, resample_prct, doShuffle=True)
 
+  callbacks = []
+   
   # Setup checkpoint
-  checkpoint = ModelCheckpoint(model_outfile,
-                               monitor="val_loss",
-                               verbose=0,
-                               save_best_only=True,
-                               mode="min")
-  callbacks = [checkpoint]
+  if doCheckpoint:
+    checkpoint = ModelCheckpoint(model_outfile,
+                                 monitor="val_loss",
+                                 verbose=0,
+                                 save_best_only=True,
+                                 mode="min")
+    callbacks = [checkpoint]
   
   # Initialize model
   numFeatures = len(featureNames)
