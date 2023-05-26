@@ -5,12 +5,11 @@ import pandas as pd
 from optparse import OptionParser
 import itertools
 
-def create_command(station_ids, name, data_dir, output_dir, hyperparams, trial=1):
+def create_command(station_ids, name, output_dir, hyperparams, trial=1):
   # Returns a string containing a python command to train the model
   # Options:
   #   station_ids: list of station IDs
   #   name: arbitrary name to be added to the output files for identification
-  #   data_dir: path to directory with station data
   #   output_dir: path to directory to save output files
   #   hyperparams: string containing additional hyperparams (e.g. '-e 10 -r 0.1')
 
@@ -29,45 +28,35 @@ parser.add_option("-s", "--stations_file",
 parser.add_option("-c", "--columns",
                   default="station_id",
                   help="List of column names for grouping stations (comma-delimited). Or, 'ALL' to combine all stations.")
-parser.add_option("-d", "--data_dir",
-                  default="data/",
-                  help="Path to station data directory.")
 parser.add_option("-o", "--output_dir",
                   default="out/",
                   help="Path to output directory.")
-parser.add_option("-e", "--epochs",
-                  help="Number of training epochs.")
-parser.add_option("-b", "--batch_size",
-                  help="Batch size")
-parser.add_option("-r", "--resample_minority_percent",
-                  help="Resample data so that N% of the data is the minority class. If `None`, don't resample.")
-parser.add_option(      "--checkpoint",
-                  default="False",
-                  action="store_true",
-                  help="Whether or not to use model checkpoints.")
 parser.add_option("-t", "--trials",
                   default=1,
                   type="int",
                   help="Number of trials for each set of hyperparameters.")
+parser.add_option("-p", "--model-params",
+                  default="")
 (options, args) = parser.parse_args()
 
 stations_file = options.stations_file
 group_columns = options.columns.split(",")
 output_dir = options.output_dir
-data_dir = options.data_dir
 num_trials = options.trials
+model_params = options.model_params.split("?")
 
-# Create a dictionary of hyperparamers
-# Only add hyperparams that are provided (otherwise, will use default values in `train.py`)
+params = [None for i in model_params]
+for i, param in enumerate(model_params):
+  param = param.split(",")
+  option = param[0]
+  values = ["", ]
+  if len(param) > 1:
+    values = param[1:]
+  model_params[i] = (option, values)
+
 hyperparams = {}
-if options.epochs is not None:
-  hyperparams["-e"] = np.array(options.epochs.split(",")).astype("int")
-if options.batch_size is not None:
-  hyperparams["-b"] = np.array(options.batch_size.split(",")).astype("int")
-if options.resample_minority_percent is not None:
-  hyperparams["-r"] = np.array(options.resample_minority_percent.split(",")).astype("float")
-if options.checkpoint is not None:
-  hyperparams["--checkpoint"] = np.array([""])
+for model_param in model_params:
+  hyperparams[model_param[0]] = model_param[1]
 
 # Load stations table
 dfStations = pd.read_csv(stations_file)
@@ -81,7 +70,6 @@ hyperparam_combos = [" ".join(hpc) for hpc in hyperparam_combos]
 
 # For each column name provided, combine the stations and print the training run commands
 for group_column in group_columns:
-
   # Special case: column name 'ALL' is not a column. Instead, use all stations.
   if group_column == "ALL":
     # Use all station IDs
@@ -90,7 +78,7 @@ for group_column in group_columns:
     for hyperparam_combo in hyperparam_combos:
       # Repeat for each trial
       for i in range(1, num_trials+1):
-        cmd_str = create_command(station_ids_str, "all-stations", data_dir, output_dir, hyperparam_combo, trial=i)
+        cmd_str = create_command(station_ids_str, "all-stations", output_dir, hyperparam_combo, trial=i)
         # Print the training Python command
         print(cmd_str)
     # Continue to next column name
@@ -116,6 +104,6 @@ for group_column in group_columns:
       print(hyperparam_combo_name)
       # Repeat for each trial
       for i in range(1, num_trials+1):
-        cmd_str = create_command(group_station_ids_str, str(group) + hyperparam_combo_name, data_dir, output_dir, hyperparam_combo, trial=i)
+        cmd_str = create_command(group_station_ids_str, str(group) + hyperparam_combo_name, output_dir, hyperparam_combo, trial=i)
         # Print the training Python command
         print(cmd_str)

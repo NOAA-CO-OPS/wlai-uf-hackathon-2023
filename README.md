@@ -130,11 +130,44 @@ Here are example outputs (for stations 9751639, 8726607):
 
 **Generate a list of training run commands to execute**
 
+For convenience, there is a script `create_runs.py` that simply generates a number
+of model runs. This can be saved to a file as a script for executing each run.
+This is very useful for running experiments with combinations of hyperparameters
+withoput having to manually write out the various combinations of options.
+
+The format of the command is:
+
+    python create_runs.py \
+      --stations_file  stations.csv   \  # CSV where each line defines station info
+      --columns        regions        \  # Column name from CSV for grouping stations
+      --output_dir     out/           \  # Where to store model run outputs
+      --trials         5              \  # Number of repetitions of each parameter combo
+      --model-params   -r,0.1,0.5?-b,256,512?--checkpoint  \  # Model parameters to loop over
+
+Lets look at the `--model-params` in more detail:
+
+- A list of model parameters separated by `?`
+- Each parameter has a list of values separated by `,`
+- So the above will create the following combinations of parameters:
+<!-- end of the list -->
+
+    -r 0.1 -b 256 --checkpoint
+    -r 0.1 -b 512 --checkpoint
+    -r 0.5 -b 256 --checkpoint
+    -r 0.5 -b 512 --checkpoint
+
+The purpose of a weird format is that these are options passed directly to the model,
+but without any change to the code in `create_runs.py`. This script does not care
+what the additional parameters after `-p` are. So changes to `train.py` to add more
+model options does not require any updated to `create_runs.py`.
+
+Here are some examples:
+
     # Train on individual stations (with random undersampling using 10% minority case)
-    python create_runs.py -r 0.1 > runs/stations.sh
+    python create_runs.py -p -r,0.1 > runs/stations.sh
 
     # Train on groups of stations organized by region (-c is for a column name)
-    python create_runs.py -c region -r 0.1 > runs/regions.sh 
+    python create_runs.py -c region -p -r,0.1 > runs/regions.sh
 
     # Train on every station together (use -c, but with 'ALL' which is treated specially)
     python create_runs.py -c ALL -r 0.1 > runs/all-stations.sh

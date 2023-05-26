@@ -1,180 +1,114 @@
-python train.py  -s 8418150 -m model_8418150_trial-1.hdf5 -l trainlog_8418150_trial-1.csv  -r 0.1
-python train.py  -s 8443970 -m model_8443970_trial-1.hdf5 -l trainlog_8443970_trial-1.csv  -r 0.1
-python train.py  -s 8447386 -m model_8447386_trial-1.hdf5 -l trainlog_8447386_trial-1.csv  -r 0.1
-python train.py  -s 8449130 -m model_8449130_trial-1.hdf5 -l trainlog_8449130_trial-1.csv  -r 0.1
-python train.py  -s 8452660 -m model_8452660_trial-1.hdf5 -l trainlog_8452660_trial-1.csv  -r 0.1
-python train.py  -s 8452944 -m model_8452944_trial-1.hdf5 -l trainlog_8452944_trial-1.csv  -r 0.1
-python train.py  -s 8454049 -m model_8454049_trial-1.hdf5 -l trainlog_8454049_trial-1.csv  -r 0.1
-python train.py  -s 8461490 -m model_8461490_trial-1.hdf5 -l trainlog_8461490_trial-1.csv  -r 0.1
-python train.py  -s 8510560 -m model_8510560_trial-1.hdf5 -l trainlog_8510560_trial-1.csv  -r 0.1
-python train.py  -s 8534720 -m model_8534720_trial-1.hdf5 -l trainlog_8534720_trial-1.csv  -r 0.1
-python train.py  -s 8536110 -m model_8536110_trial-1.hdf5 -l trainlog_8536110_trial-1.csv  -r 0.1
-python train.py  -s 8557380 -m model_8557380_trial-1.hdf5 -l trainlog_8557380_trial-1.csv  -r 0.1
-python train.py  -s 8573364 -m model_8573364_trial-1.hdf5 -l trainlog_8573364_trial-1.csv  -r 0.1
-python train.py  -s 8574680 -m model_8574680_trial-1.hdf5 -l trainlog_8574680_trial-1.csv  -r 0.1
-python train.py  -s 8638863 -m model_8638863_trial-1.hdf5 -l trainlog_8638863_trial-1.csv  -r 0.1
-python train.py  -s 8651370 -m model_8651370_trial-1.hdf5 -l trainlog_8651370_trial-1.csv  -r 0.1
-python train.py  -s 8658120 -m model_8658120_trial-1.hdf5 -l trainlog_8658120_trial-1.csv  -r 0.1
-python train.py  -s 8658163 -m model_8658163_trial-1.hdf5 -l trainlog_8658163_trial-1.csv  -r 0.1
-python train.py  -s 8665530 -m model_8665530_trial-1.hdf5 -l trainlog_8665530_trial-1.csv  -r 0.1
-python train.py  -s 8670870 -m model_8670870_trial-1.hdf5 -l trainlog_8670870_trial-1.csv  -r 0.1
-python train.py  -s 8720030 -m model_8720030_trial-1.hdf5 -l trainlog_8720030_trial-1.csv  -r 0.1
-python train.py  -s 8721604 -m model_8721604_trial-1.hdf5 -l trainlog_8721604_trial-1.csv  -r 0.1
-python train.py  -s 8723214 -m model_8723214_trial-1.hdf5 -l trainlog_8723214_trial-1.csv  -r 0.1
-python train.py  -s 8726520 -m model_8726520_trial-1.hdf5 -l trainlog_8726520_trial-1.csv  -r 0.1
-python train.py  -s 8726607 -m model_8726607_trial-1.hdf5 -l trainlog_8726607_trial-1.csv  -r 0.1
-python train.py  -s 8729108 -m model_8729108_trial-1.hdf5 -l trainlog_8729108_trial-1.csv  -r 0.1
-python train.py  -s 8729840 -m model_8729840_trial-1.hdf5 -l trainlog_8729840_trial-1.csv  -r 0.1
-python train.py  -s 8735180 -m model_8735180_trial-1.hdf5 -l trainlog_8735180_trial-1.csv  -r 0.1
-python train.py  -s 8736897 -m model_8736897_trial-1.hdf5 -l trainlog_8736897_trial-1.csv  -r 0.1
-python train.py  -s 8737048 -m model_8737048_trial-1.hdf5 -l trainlog_8737048_trial-1.csv  -r 0.1
-python train.py  -s 8741533 -m model_8741533_trial-1.hdf5 -l trainlog_8741533_trial-1.csv  -r 0.1
-python train.py  -s 8767816 -m model_8767816_trial-1.hdf5 -l trainlog_8767816_trial-1.csv  -r 0.1
-python train.py  -s 8767961 -m model_8767961_trial-1.hdf5 -l trainlog_8767961_trial-1.csv  -r 0.1
-python train.py  -s 8771341 -m model_8771341_trial-1.hdf5 -l trainlog_8771341_trial-1.csv  -r 0.1
-python train.py  -s 8771450 -m model_8771450_trial-1.hdf5 -l trainlog_8771450_trial-1.csv  -r 0.1
-python train.py  -s 8775870 -m model_8775870_trial-1.hdf5 -l trainlog_8775870_trial-1.csv  -r 0.1
-python train.py  -s 8779770 -m model_8779770_trial-1.hdf5 -l trainlog_8779770_trial-1.csv  -r 0.1
-python train.py  -s 9751381 -m model_9751381_trial-1.hdf5 -l trainlog_9751381_trial-1.csv  -r 0.1
-python train.py  -s 9751639 -m model_9751639_trial-1.hdf5 -l trainlog_9751639_trial-1.csv  -r 0.1
-python train.py  -s 1612340 -m model_1612340_trial-1.hdf5 -l trainlog_1612340_trial-1.csv  -r 0.1
-python train.py  -s 1617433 -m model_1617433_trial-1.hdf5 -l trainlog_1617433_trial-1.csv  -r 0.1
-python train.py  -s 9410840 -m model_9410840_trial-1.hdf5 -l trainlog_9410840_trial-1.csv  -r 0.1
-python train.py  -s 9411340 -m model_9411340_trial-1.hdf5 -l trainlog_9411340_trial-1.csv  -r 0.1
-python train.py  -s 9414290 -m model_9414290_trial-1.hdf5 -l trainlog_9414290_trial-1.csv  -r 0.1
-python train.py  -s 9414750 -m model_9414750_trial-1.hdf5 -l trainlog_9414750_trial-1.csv  -r 0.1
-python train.py  -s 9418767 -m model_9418767_trial-1.hdf5 -l trainlog_9418767_trial-1.csv  -r 0.1
-python train.py  -s 9419750 -m model_9419750_trial-1.hdf5 -l trainlog_9419750_trial-1.csv  -r 0.1
-python train.py  -s 9432780 -m model_9432780_trial-1.hdf5 -l trainlog_9432780_trial-1.csv  -r 0.1
-python train.py  -s 9435380 -m model_9435380_trial-1.hdf5 -l trainlog_9435380_trial-1.csv  -r 0.1
-python train.py  -s 9446484 -m model_9446484_trial-1.hdf5 -l trainlog_9446484_trial-1.csv  -r 0.1
-python train.py  -s 9447130 -m model_9447130_trial-1.hdf5 -l trainlog_9447130_trial-1.csv  -r 0.1
-python train.py  -s 9451054 -m model_9451054_trial-1.hdf5 -l trainlog_9451054_trial-1.csv  -r 0.1
-python train.py  -s 9451600 -m model_9451600_trial-1.hdf5 -l trainlog_9451600_trial-1.csv  -r 0.1
-python train.py  -s 9459450 -m model_9459450_trial-1.hdf5 -l trainlog_9459450_trial-1.csv  -r 0.1
-python train.py  -s 9459881 -m model_9459881_trial-1.hdf5 -l trainlog_9459881_trial-1.csv  -r 0.1
-python train.py  -s 9462450 -m model_9462450_trial-1.hdf5 -l trainlog_9462450_trial-1.csv  -r 0.1
-python train.py  -s 9462620 -m model_9462620_trial-1.hdf5 -l trainlog_9462620_trial-1.csv  -r 0.1
-python train.py  -s 8418150 -m model_8418150_trial-1.hdf5 -l trainlog_8418150_trial-1.csv  -r 0.1
-python train.py  -s 8443970 -m model_8443970_trial-1.hdf5 -l trainlog_8443970_trial-1.csv  -r 0.1
-python train.py  -s 8447386 -m model_8447386_trial-1.hdf5 -l trainlog_8447386_trial-1.csv  -r 0.1
-python train.py  -s 8449130 -m model_8449130_trial-1.hdf5 -l trainlog_8449130_trial-1.csv  -r 0.1
-python train.py  -s 8452660 -m model_8452660_trial-1.hdf5 -l trainlog_8452660_trial-1.csv  -r 0.1
-python train.py  -s 8452944 -m model_8452944_trial-1.hdf5 -l trainlog_8452944_trial-1.csv  -r 0.1
-python train.py  -s 8454049 -m model_8454049_trial-1.hdf5 -l trainlog_8454049_trial-1.csv  -r 0.1
-python train.py  -s 8461490 -m model_8461490_trial-1.hdf5 -l trainlog_8461490_trial-1.csv  -r 0.1
-python train.py  -s 8510560 -m model_8510560_trial-1.hdf5 -l trainlog_8510560_trial-1.csv  -r 0.1
-python train.py  -s 8534720 -m model_8534720_trial-1.hdf5 -l trainlog_8534720_trial-1.csv  -r 0.1
-python train.py  -s 8536110 -m model_8536110_trial-1.hdf5 -l trainlog_8536110_trial-1.csv  -r 0.1
-python train.py  -s 8557380 -m model_8557380_trial-1.hdf5 -l trainlog_8557380_trial-1.csv  -r 0.1
-python train.py  -s 8573364 -m model_8573364_trial-1.hdf5 -l trainlog_8573364_trial-1.csv  -r 0.1
-python train.py  -s 8574680 -m model_8574680_trial-1.hdf5 -l trainlog_8574680_trial-1.csv  -r 0.1
-python train.py  -s 8638863 -m model_8638863_trial-1.hdf5 -l trainlog_8638863_trial-1.csv  -r 0.1
-python train.py  -s 8651370 -m model_8651370_trial-1.hdf5 -l trainlog_8651370_trial-1.csv  -r 0.1
-python train.py  -s 8658120 -m model_8658120_trial-1.hdf5 -l trainlog_8658120_trial-1.csv  -r 0.1
-python train.py  -s 8658163 -m model_8658163_trial-1.hdf5 -l trainlog_8658163_trial-1.csv  -r 0.1
-python train.py  -s 8665530 -m model_8665530_trial-1.hdf5 -l trainlog_8665530_trial-1.csv  -r 0.1
-python train.py  -s 8670870 -m model_8670870_trial-1.hdf5 -l trainlog_8670870_trial-1.csv  -r 0.1
-python train.py  -s 8720030 -m model_8720030_trial-1.hdf5 -l trainlog_8720030_trial-1.csv  -r 0.1
-python train.py  -s 8721604 -m model_8721604_trial-1.hdf5 -l trainlog_8721604_trial-1.csv  -r 0.1
-python train.py  -s 8723214 -m model_8723214_trial-1.hdf5 -l trainlog_8723214_trial-1.csv  -r 0.1
-python train.py  -s 9751381 -m model_9751381_trial-1.hdf5 -l trainlog_9751381_trial-1.csv  -r 0.1
-python train.py  -s 9751639 -m model_9751639_trial-1.hdf5 -l trainlog_9751639_trial-1.csv  -r 0.1
-python train.py  -s 8418150 -m model_8418150_trial-1.hdf5 -l trainlog_8418150_trial-1.csv  -r 0.1
-python train.py  -s 8443970 -m model_8443970_trial-1.hdf5 -l trainlog_8443970_trial-1.csv  -r 0.1
-python train.py  -s 8447386 -m model_8447386_trial-1.hdf5 -l trainlog_8447386_trial-1.csv  -r 0.1
-python train.py  -s 8449130 -m model_8449130_trial-1.hdf5 -l trainlog_8449130_trial-1.csv  -r 0.1
-python train.py  -s 8452660 -m model_8452660_trial-1.hdf5 -l trainlog_8452660_trial-1.csv  -r 0.1
-python train.py  -s 8452944 -m model_8452944_trial-1.hdf5 -l trainlog_8452944_trial-1.csv  -r 0.1
-python train.py  -s 8454049 -m model_8454049_trial-1.hdf5 -l trainlog_8454049_trial-1.csv  -r 0.1
-python train.py  -s 8461490 -m model_8461490_trial-1.hdf5 -l trainlog_8461490_trial-1.csv  -r 0.1
-python train.py  -s 8510560 -m model_8510560_trial-1.hdf5 -l trainlog_8510560_trial-1.csv  -r 0.1
-python train.py  -s 8534720 -m model_8534720_trial-1.hdf5 -l trainlog_8534720_trial-1.csv  -r 0.1
-python train.py  -s 8536110 -m model_8536110_trial-1.hdf5 -l trainlog_8536110_trial-1.csv  -r 0.1
-python train.py  -s 8557380 -m model_8557380_trial-1.hdf5 -l trainlog_8557380_trial-1.csv  -r 0.1
-python train.py  -s 8573364 -m model_8573364_trial-1.hdf5 -l trainlog_8573364_trial-1.csv  -r 0.1
-python train.py  -s 8574680 -m model_8574680_trial-1.hdf5 -l trainlog_8574680_trial-1.csv  -r 0.1
-python train.py  -s 8638863 -m model_8638863_trial-1.hdf5 -l trainlog_8638863_trial-1.csv  -r 0.1
-python train.py  -s 8651370 -m model_8651370_trial-1.hdf5 -l trainlog_8651370_trial-1.csv  -r 0.1
-python train.py  -s 8658120 -m model_8658120_trial-1.hdf5 -l trainlog_8658120_trial-1.csv  -r 0.1
-python train.py  -s 8658163 -m model_8658163_trial-1.hdf5 -l trainlog_8658163_trial-1.csv  -r 0.1
-python train.py  -s 8665530 -m model_8665530_trial-1.hdf5 -l trainlog_8665530_trial-1.csv  -r 0.1
-python train.py  -s 8670870 -m model_8670870_trial-1.hdf5 -l trainlog_8670870_trial-1.csv  -r 0.1
-python train.py  -s 8720030 -m model_8720030_trial-1.hdf5 -l trainlog_8720030_trial-1.csv  -r 0.1
-python train.py  -s 8721604 -m model_8721604_trial-1.hdf5 -l trainlog_8721604_trial-1.csv  -r 0.1
-python train.py  -s 8723214 -m model_8723214_trial-1.hdf5 -l trainlog_8723214_trial-1.csv  -r 0.1
-python train.py  -s 8726520 -m model_8726520_trial-1.hdf5 -l trainlog_8726520_trial-1.csv  -r 0.1
-python train.py  -s 8726607 -m model_8726607_trial-1.hdf5 -l trainlog_8726607_trial-1.csv  -r 0.1
-python train.py  -s 8729108 -m model_8729108_trial-1.hdf5 -l trainlog_8729108_trial-1.csv  -r 0.1
-python train.py  -s 8729840 -m model_8729840_trial-1.hdf5 -l trainlog_8729840_trial-1.csv  -r 0.1
-python train.py  -s 8735180 -m model_8735180_trial-1.hdf5 -l trainlog_8735180_trial-1.csv  -r 0.1
-python train.py  -s 8736897 -m model_8736897_trial-1.hdf5 -l trainlog_8736897_trial-1.csv  -r 0.1
-python train.py  -s 8737048 -m model_8737048_trial-1.hdf5 -l trainlog_8737048_trial-1.csv  -r 0.1
-python train.py  -s 8741533 -m model_8741533_trial-1.hdf5 -l trainlog_8741533_trial-1.csv  -r 0.1
-python train.py  -s 8767816 -m model_8767816_trial-1.hdf5 -l trainlog_8767816_trial-1.csv  -r 0.1
-python train.py  -s 8767961 -m model_8767961_trial-1.hdf5 -l trainlog_8767961_trial-1.csv  -r 0.1
-python train.py  -s 8771341 -m model_8771341_trial-1.hdf5 -l trainlog_8771341_trial-1.csv  -r 0.1
-python train.py  -s 8771450 -m model_8771450_trial-1.hdf5 -l trainlog_8771450_trial-1.csv  -r 0.1
-python train.py  -s 8775870 -m model_8775870_trial-1.hdf5 -l trainlog_8775870_trial-1.csv  -r 0.1
-python train.py  -s 8779770 -m model_8779770_trial-1.hdf5 -l trainlog_8779770_trial-1.csv  -r 0.1
-python train.py  -s 9410840 -m model_9410840_trial-1.hdf5 -l trainlog_9410840_trial-1.csv  -r 0.1
-python train.py  -s 9411340 -m model_9411340_trial-1.hdf5 -l trainlog_9411340_trial-1.csv  -r 0.1
-python train.py  -s 9414290 -m model_9414290_trial-1.hdf5 -l trainlog_9414290_trial-1.csv  -r 0.1
-python train.py  -s 9414750 -m model_9414750_trial-1.hdf5 -l trainlog_9414750_trial-1.csv  -r 0.1
-python train.py  -s 9418767 -m model_9418767_trial-1.hdf5 -l trainlog_9418767_trial-1.csv  -r 0.1
-python train.py  -s 9419750 -m model_9419750_trial-1.hdf5 -l trainlog_9419750_trial-1.csv  -r 0.1
-python train.py  -s 9432780 -m model_9432780_trial-1.hdf5 -l trainlog_9432780_trial-1.csv  -r 0.1
-python train.py  -s 9435380 -m model_9435380_trial-1.hdf5 -l trainlog_9435380_trial-1.csv  -r 0.1
-python train.py  -s 9446484 -m model_9446484_trial-1.hdf5 -l trainlog_9446484_trial-1.csv  -r 0.1
-python train.py  -s 9447130 -m model_9447130_trial-1.hdf5 -l trainlog_9447130_trial-1.csv  -r 0.1
-python train.py  -s 1612340 -m model_1612340_trial-1.hdf5 -l trainlog_1612340_trial-1.csv  -r 0.1
-python train.py  -s 1617433 -m model_1617433_trial-1.hdf5 -l trainlog_1617433_trial-1.csv  -r 0.1
-python train.py  -s 9451054 -m model_9451054_trial-1.hdf5 -l trainlog_9451054_trial-1.csv  -r 0.1
-python train.py  -s 9451600 -m model_9451600_trial-1.hdf5 -l trainlog_9451600_trial-1.csv  -r 0.1
-python train.py  -s 9459450 -m model_9459450_trial-1.hdf5 -l trainlog_9459450_trial-1.csv  -r 0.1
-python train.py  -s 9459881 -m model_9459881_trial-1.hdf5 -l trainlog_9459881_trial-1.csv  -r 0.1
-python train.py  -s 9462450 -m model_9462450_trial-1.hdf5 -l trainlog_9462450_trial-1.csv  -r 0.1
-python train.py  -s 9462620 -m model_9462620_trial-1.hdf5 -l trainlog_9462620_trial-1.csv  -r 0.1
-python train.py  -s 8418150 -m model_8418150_trial-1.hdf5 -l trainlog_8418150_trial-1.csv  -r 0.1
-python train.py  -s 8443970 -m model_8443970_trial-1.hdf5 -l trainlog_8443970_trial-1.csv  -r 0.1
-python train.py  -s 8447386 -m model_8447386_trial-1.hdf5 -l trainlog_8447386_trial-1.csv  -r 0.1
-python train.py  -s 8449130 -m model_8449130_trial-1.hdf5 -l trainlog_8449130_trial-1.csv  -r 0.1
-python train.py  -s 8452660 -m model_8452660_trial-1.hdf5 -l trainlog_8452660_trial-1.csv  -r 0.1
-python train.py  -s 8452944 -m model_8452944_trial-1.hdf5 -l trainlog_8452944_trial-1.csv  -r 0.1
-python train.py  -s 8454049 -m model_8454049_trial-1.hdf5 -l trainlog_8454049_trial-1.csv  -r 0.1
-python train.py  -s 8461490 -m model_8461490_trial-1.hdf5 -l trainlog_8461490_trial-1.csv  -r 0.1
-python train.py  -s 8510560 -m model_8510560_trial-1.hdf5 -l trainlog_8510560_trial-1.csv  -r 0.1
-python train.py  -s 8534720 -m model_8534720_trial-1.hdf5 -l trainlog_8534720_trial-1.csv  -r 0.1
-python train.py  -s 8536110 -m model_8536110_trial-1.hdf5 -l trainlog_8536110_trial-1.csv  -r 0.1
-python train.py  -s 8557380 -m model_8557380_trial-1.hdf5 -l trainlog_8557380_trial-1.csv  -r 0.1
-python train.py  -s 8573364 -m model_8573364_trial-1.hdf5 -l trainlog_8573364_trial-1.csv  -r 0.1
-python train.py  -s 8574680 -m model_8574680_trial-1.hdf5 -l trainlog_8574680_trial-1.csv  -r 0.1
-python train.py  -s 8638863 -m model_8638863_trial-1.hdf5 -l trainlog_8638863_trial-1.csv  -r 0.1
-python train.py  -s 8651370 -m model_8651370_trial-1.hdf5 -l trainlog_8651370_trial-1.csv  -r 0.1
-python train.py  -s 8658120 -m model_8658120_trial-1.hdf5 -l trainlog_8658120_trial-1.csv  -r 0.1
-python train.py  -s 8658163 -m model_8658163_trial-1.hdf5 -l trainlog_8658163_trial-1.csv  -r 0.1
-python train.py  -s 8665530 -m model_8665530_trial-1.hdf5 -l trainlog_8665530_trial-1.csv  -r 0.1
-python train.py  -s 8670870 -m model_8670870_trial-1.hdf5 -l trainlog_8670870_trial-1.csv  -r 0.1
-python train.py  -s 8720030 -m model_8720030_trial-1.hdf5 -l trainlog_8720030_trial-1.csv  -r 0.1
-python train.py  -s 8721604 -m model_8721604_trial-1.hdf5 -l trainlog_8721604_trial-1.csv  -r 0.1
-python train.py  -s 8723214 -m model_8723214_trial-1.hdf5 -l trainlog_8723214_trial-1.csv  -r 0.1
-python train.py  -s 9751381 -m model_9751381_trial-1.hdf5 -l trainlog_9751381_trial-1.csv  -r 0.1
-python train.py  -s 9751639 -m model_9751639_trial-1.hdf5 -l trainlog_9751639_trial-1.csv  -r 0.1
-python train.py  -s 9410840 -m model_9410840_trial-1.hdf5 -l trainlog_9410840_trial-1.csv  -r 0.1
-python train.py  -s 9411340 -m model_9411340_trial-1.hdf5 -l trainlog_9411340_trial-1.csv  -r 0.1
-python train.py  -s 9414290 -m model_9414290_trial-1.hdf5 -l trainlog_9414290_trial-1.csv  -r 0.1
-python train.py  -s 9414750 -m model_9414750_trial-1.hdf5 -l trainlog_9414750_trial-1.csv  -r 0.1
-python train.py  -s 9418767 -m model_9418767_trial-1.hdf5 -l trainlog_9418767_trial-1.csv  -r 0.1
-python train.py  -s 9419750 -m model_9419750_trial-1.hdf5 -l trainlog_9419750_trial-1.csv  -r 0.1
-python train.py  -s 9432780 -m model_9432780_trial-1.hdf5 -l trainlog_9432780_trial-1.csv  -r 0.1
-python train.py  -s 9435380 -m model_9435380_trial-1.hdf5 -l trainlog_9435380_trial-1.csv  -r 0.1
-python train.py  -s 9446484 -m model_9446484_trial-1.hdf5 -l trainlog_9446484_trial-1.csv  -r 0.1
-python train.py  -s 9447130 -m model_9447130_trial-1.hdf5 -l trainlog_9447130_trial-1.csv  -r 0.1
-python train.py  -s 9451054 -m model_9451054_trial-1.hdf5 -l trainlog_9451054_trial-1.csv  -r 0.1
-python train.py  -s 9451600 -m model_9451600_trial-1.hdf5 -l trainlog_9451600_trial-1.csv  -r 0.1
-python train.py  -s 9459450 -m model_9459450_trial-1.hdf5 -l trainlog_9459450_trial-1.csv  -r 0.1
-python train.py  -s 9459881 -m model_9459881_trial-1.hdf5 -l trainlog_9459881_trial-1.csv  -r 0.1
-python train.py  -s 9462450 -m model_9462450_trial-1.hdf5 -l trainlog_9462450_trial-1.csv  -r 0.1
-python train.py  -s 9462620 -m model_9462620_trial-1.hdf5 -l trainlog_9462620_trial-1.csv  -r 0.1
-python train.py  -s 1612340 -m model_1612340_trial-1.hdf5 -l trainlog_1612340_trial-1.csv  -r 0.1
-python train.py  -s 1617433 -m model_1617433_trial-1.hdf5 -l trainlog_1617433_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 1612340 -m out//model_1612340-r0.1_trial-1.hdf5 -l out//trainlog_1612340-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 1617433 -m out//model_1617433-r0.1_trial-1.hdf5 -l out//trainlog_1617433-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8418150 -m out//model_8418150-r0.1_trial-1.hdf5 -l out//trainlog_8418150-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8443970 -m out//model_8443970-r0.1_trial-1.hdf5 -l out//trainlog_8443970-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8447386 -m out//model_8447386-r0.1_trial-1.hdf5 -l out//trainlog_8447386-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8449130 -m out//model_8449130-r0.1_trial-1.hdf5 -l out//trainlog_8449130-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8452660 -m out//model_8452660-r0.1_trial-1.hdf5 -l out//trainlog_8452660-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8452944 -m out//model_8452944-r0.1_trial-1.hdf5 -l out//trainlog_8452944-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8454049 -m out//model_8454049-r0.1_trial-1.hdf5 -l out//trainlog_8454049-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8461490 -m out//model_8461490-r0.1_trial-1.hdf5 -l out//trainlog_8461490-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8510560 -m out//model_8510560-r0.1_trial-1.hdf5 -l out//trainlog_8510560-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8534720 -m out//model_8534720-r0.1_trial-1.hdf5 -l out//trainlog_8534720-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8536110 -m out//model_8536110-r0.1_trial-1.hdf5 -l out//trainlog_8536110-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8557380 -m out//model_8557380-r0.1_trial-1.hdf5 -l out//trainlog_8557380-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8573364 -m out//model_8573364-r0.1_trial-1.hdf5 -l out//trainlog_8573364-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8574680 -m out//model_8574680-r0.1_trial-1.hdf5 -l out//trainlog_8574680-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8638863 -m out//model_8638863-r0.1_trial-1.hdf5 -l out//trainlog_8638863-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8651370 -m out//model_8651370-r0.1_trial-1.hdf5 -l out//trainlog_8651370-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8658120 -m out//model_8658120-r0.1_trial-1.hdf5 -l out//trainlog_8658120-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8658163 -m out//model_8658163-r0.1_trial-1.hdf5 -l out//trainlog_8658163-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8665530 -m out//model_8665530-r0.1_trial-1.hdf5 -l out//trainlog_8665530-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8670870 -m out//model_8670870-r0.1_trial-1.hdf5 -l out//trainlog_8670870-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8720030 -m out//model_8720030-r0.1_trial-1.hdf5 -l out//trainlog_8720030-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8721604 -m out//model_8721604-r0.1_trial-1.hdf5 -l out//trainlog_8721604-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8723214 -m out//model_8723214-r0.1_trial-1.hdf5 -l out//trainlog_8723214-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8726520 -m out//model_8726520-r0.1_trial-1.hdf5 -l out//trainlog_8726520-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8726607 -m out//model_8726607-r0.1_trial-1.hdf5 -l out//trainlog_8726607-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8729108 -m out//model_8729108-r0.1_trial-1.hdf5 -l out//trainlog_8729108-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8729840 -m out//model_8729840-r0.1_trial-1.hdf5 -l out//trainlog_8729840-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8735180 -m out//model_8735180-r0.1_trial-1.hdf5 -l out//trainlog_8735180-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8736897 -m out//model_8736897-r0.1_trial-1.hdf5 -l out//trainlog_8736897-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8737048 -m out//model_8737048-r0.1_trial-1.hdf5 -l out//trainlog_8737048-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8741533 -m out//model_8741533-r0.1_trial-1.hdf5 -l out//trainlog_8741533-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8767816 -m out//model_8767816-r0.1_trial-1.hdf5 -l out//trainlog_8767816-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8767961 -m out//model_8767961-r0.1_trial-1.hdf5 -l out//trainlog_8767961-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8771341 -m out//model_8771341-r0.1_trial-1.hdf5 -l out//trainlog_8771341-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8771450 -m out//model_8771450-r0.1_trial-1.hdf5 -l out//trainlog_8771450-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8775870 -m out//model_8775870-r0.1_trial-1.hdf5 -l out//trainlog_8775870-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 8779770 -m out//model_8779770-r0.1_trial-1.hdf5 -l out//trainlog_8779770-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9410840 -m out//model_9410840-r0.1_trial-1.hdf5 -l out//trainlog_9410840-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9411340 -m out//model_9411340-r0.1_trial-1.hdf5 -l out//trainlog_9411340-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9414290 -m out//model_9414290-r0.1_trial-1.hdf5 -l out//trainlog_9414290-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9414750 -m out//model_9414750-r0.1_trial-1.hdf5 -l out//trainlog_9414750-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9418767 -m out//model_9418767-r0.1_trial-1.hdf5 -l out//trainlog_9418767-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9419750 -m out//model_9419750-r0.1_trial-1.hdf5 -l out//trainlog_9419750-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9432780 -m out//model_9432780-r0.1_trial-1.hdf5 -l out//trainlog_9432780-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9435380 -m out//model_9435380-r0.1_trial-1.hdf5 -l out//trainlog_9435380-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9446484 -m out//model_9446484-r0.1_trial-1.hdf5 -l out//trainlog_9446484-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9447130 -m out//model_9447130-r0.1_trial-1.hdf5 -l out//trainlog_9447130-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9451054 -m out//model_9451054-r0.1_trial-1.hdf5 -l out//trainlog_9451054-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9451600 -m out//model_9451600-r0.1_trial-1.hdf5 -l out//trainlog_9451600-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9459450 -m out//model_9459450-r0.1_trial-1.hdf5 -l out//trainlog_9459450-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9459881 -m out//model_9459881-r0.1_trial-1.hdf5 -l out//trainlog_9459881-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9462450 -m out//model_9462450-r0.1_trial-1.hdf5 -l out//trainlog_9462450-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9462620 -m out//model_9462620-r0.1_trial-1.hdf5 -l out//trainlog_9462620-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9751381 -m out//model_9751381-r0.1_trial-1.hdf5 -l out//trainlog_9751381-r0.1_trial-1.csv  -r 0.1
+-r0.1
+python train.py  -s 9751639 -m out//model_9751639-r0.1_trial-1.hdf5 -l out//trainlog_9751639-r0.1_trial-1.csv  -r 0.1
