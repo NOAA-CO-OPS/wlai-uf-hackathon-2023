@@ -112,8 +112,10 @@ for group_column in group_columns:
     group_station_ids_str = ",".join(group_station_ids)
     # Sweep over hyperparameters for stations in this group
     for hyperparam_combo in hyperparam_combos:
+      hyperparam_combo_name = hyperparam_combo.replace(" ", "")
+      print(hyperparam_combo_name)
       # Repeat for each trial
       for i in range(1, num_trials+1):
-        cmd_str = create_command(group_station_ids_str, group, data_dir, output_dir, hyperparam_combo, trial=i)
+        cmd_str = create_command(group_station_ids_str, str(group) + hyperparam_combo_name, data_dir, output_dir, hyperparam_combo, trial=i)
         # Print the training Python command
         print(cmd_str)
