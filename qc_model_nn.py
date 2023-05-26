@@ -21,15 +21,22 @@ def concat_stations(station_ids, data_dir, featureNames,
   for i, station_id in enumerate(station_ids):
     # Load the data
     data_train = loadCleanedData(station_id, "train", data_dir)
-    targets_train = target_train = data_train.loc[:,['TARGET']]
+    targets_train = target_train = data_train.loc[:,['TARGET']].values
     data_valid = loadCleanedData(station_id, "validation", data_dir)
-    target_valid = data_valid.loc[:,['TARGET']]
+    target_valid = data_valid.loc[:,['TARGET']].values
 
     # Resample training data
     if resample_prct is not None:
+      print("Resample proportion: {}".format(resample_prct))
+      print("  Before resampling:")
+      print("    Class 0: {}".format(len(targets_train[targets_train == 0])))
+      print("    Class 1: {}".format(len(targets_train[targets_train == 1])))
       rus = RandomUnderSampler(sampling_strategy=resample_prct)
       data_train, targets_train = rus.fit_resample(data_train, targets_train)
-
+      print("  After resampling:")
+      print("    Class 0: {}".format(len(targets_train[targets_train == 0])))
+      print("    Class 1: {}".format(len(targets_train[targets_train == 1])))
+      
     # Add to list
     data_train_list[i] = data_train
     data_valid_list[i] = data_valid
