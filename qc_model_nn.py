@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
   parser = OptionParser()
   parser.add_option("-s", "--station", 
-                    default="9751639",
+                    default="1612340",
                     help="Water level station ID")
   parser.add_option("-d", "--directory", 
                     default="data/",
