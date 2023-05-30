@@ -44,16 +44,16 @@ For additional information, contact:
     mkdir -p $CONDA_PREFIX/etc/conda/activate.d
     echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
-3) Activate Anaconda environment
-<!-- end of the list -->
-
-    conda activate tf
     python3 -m pip install tensorflow==2.10
     python3 -m pip install pandas matplotlib imbalanced-learn
 
     # Verify install
     python3 -c "import os; os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'; import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')))"
 
+3) Activate Anaconda environment (whenever you start working)
+<!-- end of the list-->
+
+    conda activate tf
 
 4) Deactive Anaconda environment (when you are finished working)
 <!-- end of the list -->
