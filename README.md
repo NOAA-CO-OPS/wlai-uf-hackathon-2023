@@ -139,7 +139,7 @@ The format of the command is:
 
     python create_runs.py \
       --stations_file  stations.csv   \  # CSV where each line defines station info
-      --columns        regions        \  # Column name from CSV for grouping stations
+      --columns        region         \  # Column name from CSV for grouping stations
       --output_dir     out/           \  # Where to store model run outputs
       --trials         5              \  # Number of repetitions of each parameter combo
       --model-params   -r,0.1,0.5?-b,256,512?--checkpoint  \  # Model parameters to loop over
@@ -170,7 +170,7 @@ Here are some examples:
     python create_runs.py -c region -p -r,0.1 > runs/regions.sh
 
     # Train on every station together (use -c, but with 'ALL' which is treated specially)
-    python create_runs.py -c ALL -r 0.1 > runs/all-stations.sh
+    python create_runs.py -c ALL -p -r,0.1 > runs/all-stations.sh
 
 
 **Execute all those runs in parallel**
